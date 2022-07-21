@@ -1,3 +1,8 @@
+:root {
+    --ff-sans-serif: "Times New Roman", serif;
+    --ff-sans: "Karla";
+}
+
 *,
 *::before,
 *::after {
