@@ -1,10 +1,15 @@
 import Header from "./Components/index";
+import NotesGridLayout from "./Components/NotesGridLayout/NotesGridLayout";
 
 function App() {
     return (
-        <div className='App'>
+        <>
             <Header />
-        </div>
+
+            <main>
+                <NotesGridLayout />
+            </main>
+        </>
     );
 }
 
