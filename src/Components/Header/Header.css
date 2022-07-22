@@ -1,0 +1,11 @@
+.header {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-logo {
+    font-family: var(--ff-sans);
+    font-size: 1.4rem;
+    color: var(--c-dark-100);
+}
