@@ -1,6 +1,23 @@
 :root {
-    --ff-sans-serif: "Times New Roman", serif;
     --ff-sans: "Karla";
+    --fw-title: 800;
+    --fw-second-title: 500;
+    --fw-body: 400;
+
+    --c-dark-100: #313233;
+    --c-dark-90: #343536;
+    --c-dark-80: #505152;
+    --c-dark-70: #9fa0a1;
+    --c-dark-50: #f0f1f2;
+    --c-white-100: #fff;
+
+    --c-accent-blue: #5573e7;
+
+    --c-btn-main-normal: #5573e7;
+    --c-btn-main-disabled: #edeeef;
+
+    --c-icon-green: #00c693;
+    --c-icon-coral: #ff5e60;
 }
 
 *,
@@ -337,4 +354,17 @@ template {
 
 [hidden] {
     display: none;
+}
+
+/* 
+======================= SCREEN READER
+*/
+
+.sr-only {
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: 1px 1px 1px;
+    opacity: 0;
+    position: absolute;
 }
