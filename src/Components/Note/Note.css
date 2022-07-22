@@ -1,0 +1,90 @@
+.note {
+    background: var(--c-white-100);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    font-family: var(--ff-sans);
+}
+
+.note-detail {
+    margin-bottom: 1em;
+}
+
+.note-title {
+    color: var(--c-dark-90);
+    font-size: 1.2rem;
+}
+
+.note-body {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 1rem;
+    color: var(--c-dark-80);
+    margin-bottom: 1em;
+}
+
+.note-date {
+    color: var(--c-dark-80);
+    width: max-content;
+}
+
+.note-controll {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 1.5em;
+}
+
+.note-controll button {
+    flex: 1;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 5px;
+    position: relative;
+    font-size: 1rem;
+}
+
+.btn-main {
+    background: var(--c-btn-main-normal);
+    color: var(--c-white-100);
+}
+
+.btn-main:hover {
+    background: var(--c-btn-main-hover);
+}
+
+.btn-secondary {
+    background: var(--c-btn-second-normal);
+    color: var(--c-white-100);
+}
+
+.btn-secondary:hover {
+    background: var(--c-btn-second-hover);
+}
+
+.btn-main:focus:after,
+.btn-secondary:focus:after {
+    content: "";
+    height: calc(100% + 4px);
+    width: calc(100% + 4px);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    border-radius: 6px;
+}
+
+.btn-main:focus:after {
+    border: solid 1px var(--c-btn-main-hover);
+}
+
+.btn-secondary:focus:after {
+    border: solid 1px var(--c-btn-second-hover);
+}
+
+.btn-main:disabled,
+.btn-secondary:disabled {
+    background: var(--c-btn-disabled);
+}
