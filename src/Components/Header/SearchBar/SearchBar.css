@@ -16,10 +16,6 @@
     color: var(--c-dark-70);
 }
 
-.header-input:focus {
-    outline: solid 1px var(--c-accent-blue);
-}
-
 .input-w-icon {
     display: flex;
     align-items: center;
