@@ -2,11 +2,11 @@ import React from "react";
 import "./NotesGridLayout.css";
 
 function NotesGridLayout({ sectionTitle, children }) {
+    console.log(children);
     return (
         <article className='notes-grid-container'>
-            <h2 className='notes-grid-title'>{sectionTitle}</h2>
-
-            <div className='notes-grid-layout'>{children}</div>
+            {children[0]}
+            <div className='notes-grid-layout'>{children[1]}</div>
         </article>
     );
 }

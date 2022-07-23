@@ -1,13 +1,16 @@
 import React from "react";
 import NotesGridLayout from "../NotesGridLayout/NotesGridLayout";
 import Note from "../Note/Note";
+import NoNotesNotice from "../NoNotesNotice/NoNotesNotice";
 
 function NotesSection({ notes, toggleArchives, deleteNote }) {
     return (
         <section>
-            {notes.length ? (
-                <NotesGridLayout sectionTitle='Your notes'>
-                    {notes.map((note) => (
+            <NotesGridLayout sectionTitle='Your notes'>
+                <h1 className='notes-grid-title'>Your task</h1>
+
+                {notes.length ? (
+                    notes.map((note) => (
                         <Note
                             key={note.id}
                             id={note.id}
@@ -18,13 +21,11 @@ function NotesSection({ notes, toggleArchives, deleteNote }) {
                             toggleArchives={toggleArchives}
                             deleteNote={deleteNote}
                         />
-                    ))}
-                </NotesGridLayout>
-            ) : (
-                <div>
-                    <p>There are no note.</p>
-                </div>
-            )}
+                    ))
+                ) : (
+                    <NoNotesNotice noticeMessage={"Your notes is empty. Try to create one."} />
+                )}
+            </NotesGridLayout>
         </section>
     );
 }
