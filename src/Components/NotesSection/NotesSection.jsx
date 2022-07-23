@@ -2,15 +2,11 @@ import React from "react";
 import NotesGridLayout from "../NotesGridLayout/NotesGridLayout";
 import Note from "../Note/Note";
 
-import "./NotesSection.css";
-
 function NotesSection({ notes, toggleArchives, deleteNote }) {
     return (
-        <section className='notes-section'>
-            <h2>Your notes</h2>
-
+        <section>
             {notes.length ? (
-                <NotesGridLayout>
+                <NotesGridLayout sectionTitle='Your notes'>
                     {notes.map((note) => (
                         <Note
                             key={note.id}

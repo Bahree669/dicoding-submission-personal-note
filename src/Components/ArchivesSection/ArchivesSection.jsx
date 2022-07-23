@@ -2,15 +2,11 @@ import React from "react";
 import NotesGridLayout from "../NotesGridLayout/NotesGridLayout";
 import Note from "../Note/Note";
 
-import "./ArchivesSection.css";
-
 function ArchivesSection({ archivedNotes, toggleArchives, deleteNote }) {
     return (
-        <section className='notes-section'>
-            <h2>Archived notes</h2>
-
+        <section>
             {archivedNotes.length ? (
-                <NotesGridLayout>
+                <NotesGridLayout sectionTitle={"Your archives"}>
                     {archivedNotes.map((note) => (
                         <Note
                             key={note.id}
