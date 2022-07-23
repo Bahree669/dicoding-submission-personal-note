@@ -2,23 +2,23 @@ import React from "react";
 import NotesGridLayout from "../NotesGridLayout/NotesGridLayout";
 import Note from "../Note/Note";
 
-import "./NotesSection.css";
+import "./ArchivesSection.css";
 
-function NotesSection({ notes, toggleArchives, deleteNote }) {
+function ArchivesSection({ archivedNotes, toggleArchives, deleteNote }) {
     return (
         <section className='notes-section'>
-            <h2>Your notes</h2>
+            <h2>Archived notes</h2>
 
-            {notes.length ? (
+            {archivedNotes.length ? (
                 <NotesGridLayout>
-                    {notes.map((note) => (
+                    {archivedNotes.map((note) => (
                         <Note
                             key={note.id}
                             id={note.id}
                             title={note.title}
                             body={note.body}
-                            createdAt={note.createdAt}
                             archived={note.archived}
+                            createdAt={note.createdAt}
                             toggleArchives={toggleArchives}
                             deleteNote={deleteNote}
                         />
@@ -26,11 +26,11 @@ function NotesSection({ notes, toggleArchives, deleteNote }) {
                 </NotesGridLayout>
             ) : (
                 <div>
-                    <p>There are no note.</p>
+                    <p>There are no archived note.</p>
                 </div>
             )}
         </section>
     );
 }
 
-export default NotesSection;
+export default ArchivesSection;
