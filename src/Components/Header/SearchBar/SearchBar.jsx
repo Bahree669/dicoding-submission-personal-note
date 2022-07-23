@@ -1,9 +1,9 @@
 import React from "react";
 import "./SearchBar.css";
 
-function SearchBar() {
+function SearchBar({ getSearchQuery }) {
     return (
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
             <label htmlFor='search-note' className='sr-only'>
                 Search notes
             </label>
@@ -20,6 +20,7 @@ function SearchBar() {
                     placeholder='Search note'
                     className='header-input'
                     autoComplete='off'
+                    onInput={(e) => getSearchQuery(e)}
                 />
             </div>
         </form>

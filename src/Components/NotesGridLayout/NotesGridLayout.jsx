@@ -4,7 +4,6 @@ import Note from "../Note/Note";
 import "./NotesGridLayout.css";
 
 function NotesGridLayout({ sectionTitle, notes, toggleArchives, deleteNote }) {
-    console.log(notes);
     return (
         <article className='notes-grid-container'>
             <h2 className='notes-grid-title'>{sectionTitle}</h2>

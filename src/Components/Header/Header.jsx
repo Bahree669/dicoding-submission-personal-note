@@ -3,12 +3,12 @@ import "./Header.css";
 
 import SearchBar from "./SearchBar/SearchBar";
 
-function Header() {
+function Header({ getSearchQuery }) {
     return (
         <header className='header'>
             <h1 className='header-logo'>My Notes</h1>
 
-            <SearchBar />
+            <SearchBar getSearchQuery={getSearchQuery} />
         </header>
     );
 }
