@@ -33,6 +33,10 @@
 
 /* NORMALIZE CSS */
 
+body {
+    padding-bottom: 3em;
+}
+
 /**
  * Render the `main` element consistently in IE.
  */
