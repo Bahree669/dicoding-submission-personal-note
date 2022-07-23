@@ -5,7 +5,7 @@ function ArchivesSection({ archivedNotes, toggleArchives, deleteNote }) {
     return (
         <section>
             <NotesGridLayout
-                sectionTitle='Your notes'
+                sectionTitle='Your archives'
                 notes={archivedNotes}
                 toggleArchives={toggleArchives}
                 deleteNote={deleteNote}
