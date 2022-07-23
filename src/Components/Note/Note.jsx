@@ -3,7 +3,15 @@ import "./Note.css";
 
 import { showFormattedDate } from "../../Utils";
 
-function Note({ title = "Lorem ipsum", body = "Lorem ipsum, dolor.", createdAt = "Selasa, 01 Oktober 2002" }) {
+function Note({
+    id,
+    title = "Lorem ipsum",
+    body = "Lorem ipsum, dolor.",
+    createdAt = "Selasa, 01 Oktober 2002",
+    archived,
+    toggleArchives,
+    deleteNote,
+}) {
     return (
         <section className='note'>
             <header className='note-detail'>
@@ -16,8 +24,12 @@ function Note({ title = "Lorem ipsum", body = "Lorem ipsum, dolor.", createdAt =
             </section>
 
             <section className='note-controll'>
-                <button className='btn btn-main'>Archives note</button>
-                <button className='btn btn-secondary'>Delete</button>
+                <button className='btn btn-main' onClick={() => toggleArchives(id)}>
+                    {archived ? "Unarchive note" : "Archive note"}
+                </button>
+                <button className='btn btn-secondary' onClick={() => deleteNote(id)}>
+                    Delete
+                </button>
             </section>
         </section>
     );
