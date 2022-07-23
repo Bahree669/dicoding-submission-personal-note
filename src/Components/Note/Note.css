@@ -40,12 +40,16 @@
 }
 
 .btn {
+    --br: 500px;
+    --offset: 6px;
     outline: none;
     border: none;
-    padding: 15px 15px;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: var(--br);
     position: relative;
+    font-family: var(--ff-sans);
     font-size: 1rem;
+    height: max-content;
 }
 
 .btn-main {
@@ -69,12 +73,12 @@
 .btn-main:focus:after,
 .btn-secondary:focus:after {
     content: "";
-    height: calc(100% + 4px);
-    width: calc(100% + 4px);
+    height: calc(100% + var(--offset));
+    width: calc(100% + var(--offset));
     position: absolute;
-    top: -2px;
-    left: -2px;
-    border-radius: 6px;
+    top: calc(var(--offset) / 2 * -1);
+    left: calc(var(--offset) / 2 * -1);
+    border-radius: var(--br);
 }
 
 .btn-main:focus:after {
