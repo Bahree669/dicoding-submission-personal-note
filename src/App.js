@@ -1,15 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { getInitialData } from "./Utils";
-import Header from "./Components/index";
-import NotesSection from "./Components/NotesSection/NotesSection";
-import ArchivesSection from "./Components/ArchivesSection/ArchivesSection";
-import NotesGridLayout from "./Components/NotesGridLayout/NotesGridLayout";
+import { Header, ArchivesSection, NotesSection, NoNotesNotice, NotesGridLayout, InputForm } from "./Components/index";
 
 function App() {
     const [notes, setNotes] = useState(getInitialData || []);
     const [searchQuery, setSearchQuery] = useState("");
     const [searchedNotes, setSearchedNotes] = useState([]);
+    const [inputForm, setInputForm] = useState({
+        id: +new Date(),
+        title: "",
+        body: "",
+        archived: false,
+        createdAt: new Date().toISOString(),
+    });
+
+    const [fromDialogVisibility, setFormDialogVisibility] = useState(false);
 
     useEffect(() => {
         if (searchQuery.length) setSearchedNotes(searchNotes(searchQuery));
@@ -37,34 +43,67 @@ function App() {
         return searchResults;
     }
 
+    function toggleFormDialog() {
+        setFormDialogVisibility((prevState) => !prevState);
+    }
+
+    function getNoteInput(e) {
+        const target = e.target;
+        const name = target.name;
+        const value = target.value;
+
+        setInputForm({ ...inputForm, [name]: value });
+    }
+
+    function createNote(e) {
+        e.preventDefault();
+
+        setNotes((prevState) => [...prevState, inputForm]);
+    }
+
     return (
-        <>
-            <Header getSearchQuery={getSearchQuery} />
+        <div>
+            <Header
+                getSearchQuery={getSearchQuery}
+                toggleFormDialog={toggleFormDialog}
+                formVisibility={fromDialogVisibility}
+            />
+
+            <InputForm
+                formVisibility={fromDialogVisibility}
+                createNote={createNote}
+                getNoteInput={getNoteInput}
+                toggleFormDialog={toggleFormDialog}
+                inputForm={inputForm}
+            />
 
             <main>
-                {!searchedNotes.length ? (
+                {searchedNotes.length === 0 && !searchQuery.length ? (
                     <>
                         <NotesSection
                             notes={notes.filter((note) => !note.archived)}
                             toggleArchives={toggleArchives}
                             deleteNote={deleteNote}
                         />
+
                         <ArchivesSection
                             archivedNotes={notes.filter((note) => note.archived)}
                             toggleArchives={toggleArchives}
                             deleteNote={deleteNote}
                         />
                     </>
-                ) : (
+                ) : searchedNotes.length > 0 ? (
                     <NotesGridLayout
-                        sectionTitle={`Displaying result for : ${searchQuery}`}
+                        sectionTitle={`Results for : "${searchQuery}"`}
                         notes={searchedNotes}
                         toggleArchives={toggleArchives}
                         deleteNote={deleteNote}
                     />
+                ) : (
+                    <NoNotesNotice noticeMessage={`Cannot find notes with title : ${searchQuery}`} />
                 )}
             </main>
-        </>
+        </div>
     );
 }
 

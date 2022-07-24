@@ -24,9 +24,7 @@ function NotesGridLayout({ sectionTitle, notes, toggleArchives, deleteNote }) {
                     ))}
                 </div>
             ) : (
-                <NoNotesNotice
-                    noticeMessage={"Sorry there are not items in this category. Try to create or add one."}
-                />
+                <NoNotesNotice noticeMessage={"Sorry there are no items in this category. Try to create or add one."} />
             )}
         </article>
     );

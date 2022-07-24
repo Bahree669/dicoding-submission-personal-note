@@ -1,6 +1,12 @@
-/* .notice {
-    background: coral;
-} */
+.notice {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.notice-img {
+    width: 70%;
+    margin: 0 auto;
+}
 
 .notice-img img {
     width: 100%;

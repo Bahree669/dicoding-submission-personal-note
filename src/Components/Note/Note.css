@@ -1,10 +1,10 @@
 .note {
     background: var(--c-white-100);
+    background: #f0f7ff;
     padding: 20px;
     border-radius: 10px;
     font-family: var(--ff-sans);
     height: max-content;
-    outline: solid 1px var(--c-dark-80);
 }
 
 .note-detail {
@@ -44,12 +44,16 @@
     --offset: 6px;
     outline: none;
     border: none;
-    padding: 10px;
     border-radius: var(--br);
+}
+
+.btn-main,
+.btn-secondary {
+    padding: 10px;
     position: relative;
+    height: max-content;
     font-family: var(--ff-sans);
     font-size: 1rem;
-    height: max-content;
 }
 
 .btn-main {
@@ -92,4 +96,5 @@
 .btn-main:disabled,
 .btn-secondary:disabled {
     background: var(--c-btn-disabled);
+    cursor: not-allowed;
 }
