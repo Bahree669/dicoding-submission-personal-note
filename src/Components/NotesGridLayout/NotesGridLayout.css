@@ -25,19 +25,23 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    ::-webkit-scrollbar {
+    .notes-grid-layout::-webkit-scrollbar {
         width: 3px;
     }
 
-    ::-webkit-scrollbar-track {
-        background: var(--c-dark-50);
+    .notes-grid-layout::-webkit-scrollbar-track {
+        background: none;
     }
 
-    ::-webkit-scrollbar-thumb {
+    .notes-grid-layout::-webkit-scrollbar-thumb {
+        background: none;
+    }
+
+    .notes-grid-container:hover .notes-grid-layout::-webkit-scrollbar-thumb {
         background: var(--c-dark-100);
     }
 
-    ::-webkit-scrollbar-thumb:hover {
+    .notes-grid-layout::-webkit-scrollbar-thumb:hover {
         background: var(--c-dark-80);
     }
 }
