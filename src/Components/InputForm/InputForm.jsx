@@ -3,8 +3,8 @@ import "./InputForm.css";
 
 function InputForm({ createNote, getNoteInput, formVisibility, toggleFormDialog, inputForm }) {
     return (
-        <dialog open={formVisibility ? "open" : false} className='input-dialog'>
-            <div className='input-content'>
+        <dialog open={formVisibility} className='input-dialog'>
+            <div className='dialog-content'>
                 <button className='btn btn-icon input-close-btn' onClick={toggleFormDialog}>
                     <svg
                         xmlns='http://www.w3.org/2000/svg'
