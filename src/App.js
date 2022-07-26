@@ -100,7 +100,7 @@ function App() {
                         deleteNote={deleteNote}
                     />
                 ) : (
-                    <NoNotesNotice noticeMessage={`Cannot find notes with title : ${searchQuery}`} />
+                    <NoNotesNotice noticeMessage={`Couldn't find any notes with title : ${searchQuery}`} />
                 )}
             </main>
         </div>
