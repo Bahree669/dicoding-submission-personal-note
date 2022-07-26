@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.dialog-content.delete h4 {
+    color: var(--c-dark-90);
+    font-size: 1rem;
+}
+
 .del-conf-dialog-btns {
     display: flex;
     gap: 0.5em;
