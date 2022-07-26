@@ -59,6 +59,13 @@ function App() {
         e.preventDefault();
 
         setNotes((prevState) => [...prevState, inputForm]);
+        setInputForm({
+            id: +new Date(),
+            title: "",
+            body: "",
+            archived: false,
+            createdAt: new Date().toISOString(),
+        });
     }
 
     return (
