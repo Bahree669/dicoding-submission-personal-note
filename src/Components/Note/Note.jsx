@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Note.css";
 
 import { showFormattedDate } from "../../Utils";
+import DeleteConfirmDialog from "./DeleteConfirmDialog/DeleteConfirmDialog";
 
 function Note({
     id,
@@ -12,6 +13,12 @@ function Note({
     toggleArchives,
     deleteNote,
 }) {
+    const [dialogState, setDialogState] = useState(false);
+
+    function toggleDialog() {
+        setDialogState((prevState) => !prevState);
+    }
+
     return (
         <section className='note'>
             <header className='note-detail'>
@@ -27,10 +34,17 @@ function Note({
                 <button className='btn btn-main' onClick={() => toggleArchives(id)}>
                     {archived ? "Unarchive note" : "Archive note"}
                 </button>
-                <button className='btn btn-secondary' onClick={() => deleteNote(id)}>
+                <button className='btn btn-secondary' onClick={toggleDialog}>
                     Delete
                 </button>
             </section>
+
+            <DeleteConfirmDialog
+                noteId={id}
+                toggleDialog={toggleDialog}
+                deleteFunction={deleteNote}
+                state={dialogState}
+            />
         </section>
     );
 }

@@ -1,0 +1,13 @@
+.dialog-content.delete {
+    text-align: center;
+}
+
+.del-conf-dialog-btns {
+    display: flex;
+    gap: 0.5em;
+    margin-top: 1.5em;
+}
+
+.del-conf-dialog-btns button {
+    width: 100%;
+}
