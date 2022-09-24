@@ -1,0 +1,19 @@
+.header {
+    background: var(--c-white);
+    border-radius: 100em;
+    position: fixed;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+
+    bottom: 10px;
+    left: 50%;
+    padding: 5px 10px;
+    transform: translate(-50%, -50%);
+
+    &__nav {
+        &--items {
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+$size: 48px;
+.navigationLink {
+    height: $size;
+    width: $size;
+    background: var(--c-white);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    transition: background 0.4s ease-in-out;
+
+    &:not(.navigationLink--inverse):is(.active) {
+        background: rgb(238, 237, 237);
+        animation: shake 0.5s linear;
+    }
+
+    &:hover {
+        background: rgb(238, 237, 237);
+    }
+
+    & > svg {
+        transition: opacity 0.4s ease-in-out;
+    }
+
+    &:not(.active, .navigationLink--inverse) {
+        & > svg {
+            opacity: 0.5;
+        }
+    }
+
+    &--inverse {
+        background: var(--c-dark-100);
+        transform: translateY(-20px) scale(1.1);
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:is(.active) {
+            transform: translateY(-30px) scale(1.1);
+        }
+
+        &:hover {
+            background: var(--c-dark-90);
+        }
+
+        & > svg {
+            fill: var(--c-white);
+        }
+    }
+
+    @keyframes shake {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            transform: rotate(-30deg);
+        }
+        50% {
+            transform: rotate(30deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+}
