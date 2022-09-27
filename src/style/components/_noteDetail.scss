@@ -1,0 +1,29 @@
+.noteDetail {
+    &__title {
+        font-size: var(--fs-xlarge-m);
+    }
+
+    &__body {
+        font-size: var(--fs-normal-m);
+        color: var(--c-dark-90);
+    }
+
+    &__time {
+        margin: 1em 0;
+    }
+
+    &__controll {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2em;
+        border-bottom: solid 1px var(--c-dark-90);
+        padding-bottom: 2px;
+
+        &--main {
+            display: flex;
+            gap: 0.5em;
+            align-items: center;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+.notes {
+    $colNumber: 2;
+    display: grid;
+    grid-template-columns: repeat($colNumber, calc(50% - (0.5em / $colNumber)));
+    gap: 0.5em;
+    padding-bottom: 8em;
+
+    $colNumber: 3;
+    @media screen and (min-width: 590px) {
+        grid-template-columns: repeat($colNumber, calc((100% / $colNumber) - (0.5em / $colNumber)));
+    }
+
+    $colNumber: 4;
+    @media screen and (min-width: 790px) {
+        grid-template-columns: repeat($colNumber, calc((100% / $colNumber) - (0.5em / $colNumber)));
+    }
+}

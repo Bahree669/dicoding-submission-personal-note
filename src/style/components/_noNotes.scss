@@ -1,0 +1,23 @@
+.noNotes {
+    &__title {
+        font-size: var(--fs-large-m);
+        color: var(--c-dark-100);
+        margin-bottom: 0.2em;
+    }
+
+    &__content {
+        margin-bottom: 3em;
+    }
+
+    &__body {
+        line-height: 1.1em;
+        color: var(--c-dark-90);
+        margin-bottom: 2em;
+    }
+
+    & img {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

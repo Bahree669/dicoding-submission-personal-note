@@ -33,7 +33,8 @@ $size: 48px;
         transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
         &:is(.active) {
-            transform: translateY(-30px) scale(1.1);
+            pointer-events: none;
+            opacity: 0;
         }
 
         &:hover {

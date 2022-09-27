@@ -1,0 +1,17 @@
+.onlyNameLink {
+    background: var(--c-dark-100);
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: var(--c-white);
+    transition: background 0.4s ease-in-out;
+    font-size: var(--fs-normal-m);
+
+    &:hover {
+        background: var(--c-dark-90);
+    }
+
+    &:focus {
+        outline: solid 2px var(--c-dark-100);
+        outline-offset: 1.5px;
+    }
+}

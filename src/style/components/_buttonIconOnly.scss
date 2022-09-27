@@ -1,0 +1,37 @@
+$buttonSize: 48px;
+.buttonIconOnly {
+    height: $buttonSize;
+    width: $buttonSize;
+    border-radius: 50%;
+    background: var(--c-white);
+    display: grid;
+    place-content: center;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.4s ease-in-out;
+
+    &--invers {
+        transform: translateY(-20px) scale(1.1);
+        background: var(--c-dark-100);
+        transform: translateY(-20px) scale(1.1);
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &:hover {
+            background: var(--c-dark-90);
+        }
+
+        & > svg {
+            fill: var(--c-white);
+        }
+
+        &:focus {
+            outline: solid 2px var(--c-dark-100);
+            outline-offset: 2px;
+        }
+    }
+
+    &:not(.buttonIconOnly--invers):hover {
+        background: rgb(238, 237, 237);
+    }
+}

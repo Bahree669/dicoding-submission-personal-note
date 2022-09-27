@@ -1,10 +1,6 @@
-import React from "react";
-import { useLocation } from "react-router-dom";
 import NavigationLink from "../Buttons/NavigationLink";
 
 function Header() {
-    const { pathname } = useLocation();
-
     return (
         <header className='header'>
             <nav className='header__nav'>
@@ -16,19 +12,15 @@ function Header() {
                             </svg>
                         </NavigationLink>
                     </li>
+
                     <li>
-                        <NavigationLink to={"/new"} title={"Add note"} optionalClass={"inverse"}>
-                            {pathname === "/new" ? (
-                                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-                                    <path d='m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z'></path>
-                                </svg>
-                            ) : (
-                                <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
-                                    <path d='M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z'></path>
-                                </svg>
-                            )}
+                        <NavigationLink to={"/new"} title={"Add note"} optionalClass={`inverse`}>
+                            <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>
+                                <path d='M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z'></path>
+                            </svg>
                         </NavigationLink>
                     </li>
+
                     <li>
                         <NavigationLink to={"/archives"} title={"Archives"}>
                             <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'>

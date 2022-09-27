@@ -1,0 +1,37 @@
+.inputForm {
+    padding-top: 2em;
+
+    &__title {
+        outline: none;
+        background: none;
+        border: none;
+        margin-bottom: 0.5em;
+
+        color: var(--c-dark-100);
+        font-size: var(--fs-xlarge-m);
+        font-weight: bold;
+
+        &::placeholder {
+            color: var(--c-dark-50);
+            font-size: var(--fs-large-m);
+            font-weight: bold;
+        }
+    }
+
+    &__body {
+        color: var(--c-dark-50);
+        outline: none;
+
+        &:focus {
+            color: var(--c-dark-100);
+        }
+    }
+
+    &__button {
+        position: fixed;
+        bottom: calc(1em + 28px);
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 1001;
+    }
+}

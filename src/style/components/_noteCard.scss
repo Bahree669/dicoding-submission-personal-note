@@ -1,0 +1,28 @@
+.noteCard {
+    background: #ffecd6;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 100%;
+
+    &__title {
+        font-size: var(--fs-normal-m);
+        margin-bottom: 0.2em;
+        line-height: 1.1em;
+        color: var(--c-dark-100);
+        margin-bottom: 1em;
+    }
+
+    &__body {
+        font-size: var(--fs-normal-m);
+        line-height: 1.1em;
+        height: max-content;
+        color: var(--c-dark-50);
+
+        display: -webkit-box;
+        max-width: 200px;
+        -webkit-line-clamp: 10;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
